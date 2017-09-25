@@ -27,7 +27,7 @@ export class SentryService extends DataSource<any> {
 
     const headers = new Headers();
     headers.append('Target-URL', url);
-    headers.append('Authorization', 'Bearer 40fd6d9e89f94bbc8642b58cd39585c251681a89304f410aaf74e5bd974b8b5e');
+    headers.append('Authorization', 'Bearer c4b91029f8da4cf9a30e53d36f911c1fb651042ab60a4491a2f28d0c4cab9a15');
 
     return this.http.get(proxy, { headers: headers} );
   }
