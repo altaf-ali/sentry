@@ -1,0 +1,33 @@
+<div *ngIf="event" fxFlexFill fxLayout="column">
+  <div fxFlex="40%" class="scrollx scrolly">
+    <md-tab-group>
+      <md-tab label="User">
+        <pre><code>{{event.user}}</code></pre>
+      </md-tab>
+
+      <md-tab label="Platform">
+        <pre><code>{{event.platform}}</code></pre>
+      </md-tab>
+
+      <md-tab label="System">
+        <pre><code>{{event.sysinfo}}</code></pre>
+      </md-tab>
+
+      <md-tab label="Packages">
+        <pre><code>{{event.packages}}</code></pre>
+      </md-tab>
+
+    </md-tab-group>
+  </div>
+
+  <div fxFlex="60%" class="scrollx scrolly">
+    <md-card>
+      <md-card-header><md-card-title>Log</md-card-title></md-card-header>
+      <md-card-content>
+        <pre><code>{{event.errorlog}}</code></pre>
+      </md-card-content>
+    </md-card>
+  </div>
+
+</div>
+
