@@ -1,5 +1,5 @@
-<div *ngIf="event" fxFlexFill fxLayout="column">
-  <div fxFlex="40%" class="scrollx scrolly">
+<div *ngIf="event">
+  <div class="scrollx scrolly">
     <md-tab-group>
       <md-tab label="User">
         <pre><code>{{event.user}}</code></pre>
@@ -20,9 +20,8 @@
     </md-tab-group>
   </div>
 
-  <div fxFlex="60%" class="scrollx scrolly">
+  <div class="scrollx scrolly">
     <md-card>
-      <md-card-header><md-card-title>Log</md-card-title></md-card-header>
       <md-card-content>
         <pre><code>{{event.errorlog}}</code></pre>
       </md-card-content>
