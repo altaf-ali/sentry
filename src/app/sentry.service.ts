@@ -42,7 +42,7 @@ export class SentryService extends DataSource<any> {
       user_email: data.user.email,
       sysinfo: JSON.stringify(data.user.data.sysinfo, null, 2),
       platform: JSON.stringify(data.context.platform, null, 2),
-      packages: JSON.stringify(data.context.packages, null, 2),
+      packages: JSON.stringify(data.context.packages, Object.keys(data.context.packages).sort(), 2),
       errorlog: data.context.errorlog
     };
 
