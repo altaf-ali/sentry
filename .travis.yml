@@ -1,11 +1,24 @@
 language: node_js
+
+sudo: false
+dist: trusty
+
 node_js:
 - node
+
 env:
   global:
   - GIT_AUTHOR_NAME: Altaf Ali
   - GIT_AUTHOR_EMAIL: altaf@fastmail.com
   - secure: SNBqSJCIII7X9GEwj7c0cGBNuafm5bSdtYbk6C5ImVWI0Gjg74OMMTyn5KsHP96uCwRUgVZ6iHE+sUWQsSF99e/H8KRa3GOSNWIhuyOcuWOQUOaj7IuahJQppUeaIPx6Y3NNQe9tzrfBPGz4xLrNxQYTcPKwcsVZ/r6RXJGqyVwBenm5NMkNr7IjNWXFMKdKhTA9If8/va1EW53pjs3ZIl6cRG3Vz218HVpdE4J0k8F8UqLa7gUOqODlyaa+K5xnFzK1jFnkTJ40sa+H+IwbE6389xPtztttnYVW3NaZVsJlaNf8DGSoy4IxvKUKC7wFxEIu4zBvdLCj8JLFVRrr0pO8iO6+C9InF3OptIsevErxSGgyw5f0dpFfy8jJwKVHg1cEbuxQhk5VHao0WadDWWTSh6XQYnJcUc81EF5Q9cgGu499oEpB++Rp/hdG15durmMoa+JH7oDuoOt9Rw+b8FX/CmGv8jAt90NnvV5J/wT/WrceOyFZ5rH+JhROiFw93hHnQcSui/Vjv7ylnd7+QP/rZzmNMJGYMFdCucoHgKkdM55PqKTSulKbgx0mvxtUgSlCS+cU/z7RTf1MUilkilSLBjrbWAQ4uIc5+y+jObLRAFdDj26XOODIVy5ZTnHkHzy1yKmtbcOx7QWlT4EBfuKHSdmqNRmiVpSl/DkE6wI=
 
+before_install:
+- export CHROME_BIN=/usr/bin/google-chrome
+- export DISPLAY=:99.0
+- sh -e /etc/init.d/xvfb start
+
+script:
+- ng build --prod
+
 after_success:
-  - npm run deploy
+- npm run deploy
